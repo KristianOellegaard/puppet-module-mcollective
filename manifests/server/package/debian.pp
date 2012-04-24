@@ -12,6 +12,9 @@ class mcollective::server::package::debian {
 	mode => 755,
 	source => 'puppet:///modules/mcollective/debian/etc/init.d/mcollective',
   }->
+  file { '/etc/init/mcollective.conf':
+    ensure => present
+  }->
   file_line { 'Debian upstart fix': # TODO: Make this parameterized
     path => '/etc/init/mcollective.conf',
     line => 'expect fork',
