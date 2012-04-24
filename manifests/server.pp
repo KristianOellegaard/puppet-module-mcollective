@@ -35,7 +35,7 @@ class mcollective::server (
   $stomp_server         = $mcollective::params::stomp_server,
   $stomp_port           = $mcollective::params::stomp_port,
   $stomp_user           = $mcollective::params::stomp_user,
-  $stomp_password       = $mcollective::params::stomp_password,
+  $stomp_passwd         = $mcollective::params::stomp_passwd,
   $stomp_ssl            = $mcollective::params::stomp_ssl,
   $server_ssl_server_private = $mcollective::params::server_ssl_server_private,
   $server_ssl_server_public = $mcollective::params::server_ssl_server_public,
