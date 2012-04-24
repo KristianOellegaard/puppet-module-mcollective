@@ -16,6 +16,7 @@ class mcollective::server::package::debian {
     ensure => present
   }->
   file_line { 'Debian upstart fix': # TODO: Make this parameterized
+    ensure => present,
     path => '/etc/init/mcollective.conf',
     line => 'expect fork',
   }
