@@ -10,6 +10,10 @@ class mcollective::server::package::debian {
   file { 'Debian init script fix': # TODO: Make this parameterized
 	path => '/etc/init.d/mcollective',
 	source => 'puppet:///modules/mcollective/debian/etc/init.d/mcollective',
+  }->
+  file_line { 'Debian upstart fix': # TODO: Make this parameterized
+    path => '/etc/init/mcollective',
+    line => 'expect fork',
   }
   
 
