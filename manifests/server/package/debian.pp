@@ -9,7 +9,7 @@ class mcollective::server::package::debian {
   }->
   file { 'Debian init script fix': # TODO: Make this parameterized
 	path => '/etc/init.d/mcollective',
-	source => 'puppet:///debian/etc/init.d/mcollective',
+	source => 'puppet:///modules/mcollective/debian/etc/init.d/mcollective',
   }
   
 
