@@ -23,4 +23,11 @@ class mcollective::server::config {
     owner   => root,
     group   => root,
   }
+  file { $mcollective::server::pubkeypath:
+    ensure  => directory,
+    recurse => true,
+    purge   => true,
+    owner   => root,
+    group   => root,
+  }
 }

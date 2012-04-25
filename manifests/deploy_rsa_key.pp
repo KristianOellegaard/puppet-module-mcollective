@@ -13,7 +13,7 @@
 #     mcollective::deploy_rsa_key { "ken": }
 #
 define mcollective::deploy_rsa_key {
-  $pubkeypath = "/etc/mcollective/pubkeys/"
+  $pubkeypath = $mcollective::server::pubkeypath
 
   file { "${mcollective::server::server_ssl_client_cert_dir}/${name}.pem":
     content => file("${pubkeypath}/${name}.pem", "/dev/null"),

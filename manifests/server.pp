@@ -43,6 +43,7 @@ class mcollective::server (
   $nrpe_dir             = $mcollective::params::nrpe_dir,
   $fact_source          = $mcollective::params::fact_source,
   $yaml_facter_source   = $mcollective::params::yaml_facter_source
+  $pubkeypath           = "/etc/mcollective/pubkeys/",
 
 ) inherits mcollective::params {
 
