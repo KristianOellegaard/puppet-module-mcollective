@@ -42,7 +42,7 @@ class mcollective::server (
   $server_ssl_client_cert_dir = $mcollective::params::server_ssl_client_cert_dir,
   $nrpe_dir             = $mcollective::params::nrpe_dir,
   $fact_source          = $mcollective::params::fact_source,
-  $yaml_facter_source   = $mcollective::params::yaml_facter_source
+  $yaml_facter_source   = $mcollective::params::yaml_facter_source,
   $pubkeypath           = "/etc/mcollective/pubkeys/",
 
 ) inherits mcollective::params {
