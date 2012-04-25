@@ -76,4 +76,6 @@ class mcollective::params {
 
   $client_config_file = "/etc/mcollective/client.cfg"
   $server_config_file = "/etc/mcollective/server.cfg"
+  
+  $pubkeypath = "/etc/mcollective/pubkeys/"
 }

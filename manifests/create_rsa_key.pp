@@ -12,6 +12,7 @@
 #     mcollective::create_rsa_key { "ken": }
 #
 define mcollective::create_rsa_key {
+  include mcollective::params
   $mcdir = "/home/${name}/.mc/"
 
   file { $mcdir:
@@ -34,7 +35,7 @@ define mcollective::create_rsa_key {
     require => Exec["genprivkey"],
   }
 
-  $pubkeypath = $mcollective::server::pubkeypath
+  $pubkeypath = $mcollective::params::pubkeypath
 
   exec { "genpubkey":
     command   => "/usr/bin/openssl rsa -in ${mcdir}/${name}-private.pem -out ${pubkeypath}/${name}.pem -outform PEM -pubout",
