@@ -1,4 +1,4 @@
 policy default deny
 <% userpolicy.each do |user,settings| -%>
-<%= settings["policy"] %>	cert=<%= user %>	<%= settings["actions"] ? settings["actions"].join(" ") : "*" %>	*	*
+<%= settings["policy"] %>	<% if scope.lookupvar("mcollective::server::mc_security_provider") == 'ssl' %>cert=<% end %><%= user %>	<%= settings["actions"] ? settings["actions"].join(" ") : "*" %>	*	*
 <% end -%>
