@@ -78,4 +78,6 @@ class mcollective::params {
   $server_config_file = "/etc/mcollective/server.cfg"
   
   $pubkeypath = "/etc/mcollective/pubkeys/"
+  
+  $server_ssh_host_rsa_key = '/etc/ssh/ssh_host_rsa_key'
 }

@@ -43,7 +43,8 @@ class mcollective::server (
   $nrpe_dir             = $mcollective::params::nrpe_dir,
   $fact_source          = $mcollective::params::fact_source,
   $yaml_facter_source   = $mcollective::params::yaml_facter_source,
-  $pubkeypath           = $mcollective::params::pubkeypath
+  $pubkeypath           = $mcollective::params::pubkeypath,
+  $server_ssh_host_rsa_key = $mcollective::params::server_ssh_host_rsa_key
 
 ) inherits mcollective::params {
 

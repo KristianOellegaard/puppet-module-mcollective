@@ -14,6 +14,9 @@ plugin.psk = <%= scope.lookupvar("mcollective::server::mc_security_psk") %>
 plugin.ssl_server_private = <%= scope.lookupvar("mcollective::server::server_ssl_server_private") %>
 plugin.ssl_server_public = <%= scope.lookupvar("mcollective::server::server_ssl_server_public") %>
 plugin.ssl_client_cert_dir = <%= scope.lookupvar("mcollective::server::server_ssl_client_cert_dir") %>
+<% when "sshkey" -%>
+securityprovider = sshkey
+plugin.sshkey = <%= scope.lookupvar("mcollective::server::server_ssh_host_rsa_key)") %>
 <% end -%>
 
 # Registration
