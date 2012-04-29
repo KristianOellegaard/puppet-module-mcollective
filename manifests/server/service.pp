@@ -4,11 +4,11 @@ class mcollective::server::service(
   $yaml_facter_source  = $mcollective::server::yaml_facter_source
 
 ) {
-    anchor { 'mcollective::server::package::begin': }
-    anchor { 'mcollective::server::package::end': }
+    anchor { 'mcollective::server::service::begin': }
+    anchor { 'mcollective::server::service::end': }
     Class {
-      require => Anchor['mcollective::server::package::begin'],
-      before  => Anchor['mcollective::server::package::end'],
+      require => Anchor['mcollective::server::service::begin'],
+      before  => Anchor['mcollective::server::service::end'],
     }
 
     case $operatingsystem {
