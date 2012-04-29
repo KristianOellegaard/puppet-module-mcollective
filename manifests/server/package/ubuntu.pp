@@ -2,7 +2,7 @@
 class mcollective::server::package::ubuntu {
     case $lsbdistrelease {
       11.04, 10.10, 10.04: { # These distros dont have a new libstomp version, so we get it from the gem
-		  package { 'libstomp':
+		  package { 'stomp':
 		    ensure => present,
 			provider => 'gem'
 		  }->
