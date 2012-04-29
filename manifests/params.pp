@@ -13,7 +13,7 @@ class mcollective::params {
     /(?i-mx:ubuntu|debian)/ => $lsbdistrelease ? {
 									/(?i-mx:11\.04|10\.10|10\.04)/ => '1',
 									default => '0',
-							   }
+							   },
     default          => '1',
   }
  
