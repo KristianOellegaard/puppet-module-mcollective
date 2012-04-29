@@ -4,24 +4,25 @@ class mcollective::server::service(
   $yaml_facter_source  = $mcollective::server::yaml_facter_source
 
 ) {
-	
+    anchor { 'mcollective::server::package::begin': }
+    anchor { 'mcollective::server::package::end': }
+    Class {
+      require => Anchor['mcollective::server::package::begin'],
+      before  => Anchor['mcollective::server::package::end'],
+    }
+
     case $operatingsystem {
-      ubuntu: {
-	  	service { 'mcollective':
-	  		ensure    => running,
-	  		enable    => true,
-	  		name      => $mc_service_name,
-	  		hasstatus => true,
-			provider => 'upstart', # Do not use init.d for ubuntu.
-	  	}
+      debian: {
+        class { 'mcollective::server::service::debian': }
+      }
+	  ubuntu: {
+	  	class { 'mcollective::server::service::ubuntu': }
+	  }
+      redhat,centos,oel: {
+        class { 'mcollective::server::service::redhat': }
       }
       default: {
-	  	service { 'mcollective':
-	  		ensure    => running,
-	  		enable    => true,
-	  		name      => $mc_service_name,
-	  		hasstatus => true,
-	  	}
+        fail("operatingsystem not supported: ${operatingsystem}")
       }
     }
 	
