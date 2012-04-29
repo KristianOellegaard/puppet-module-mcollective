@@ -11,7 +11,7 @@ class mcollective::params {
   # Default to daemonize, but on systems using upstart, dont daemonize
   $mc_daemonize         = $operatingsystem ? {
     /(?i-mx:ubuntu|debian)/ => $lsbdistrelease ? {
-									/(?i-mx:11\.04|10\.10|10\.04)/ => '1'
+									/(?i-mx:11\.04|10\.10|10\.04)/ => '1',
 									default => '0',
 							   }
     default          => '1',
