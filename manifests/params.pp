@@ -7,7 +7,16 @@ class mcollective::params {
   $mc_collectives       = ''
   $mc_logfile           = '/var/log/mcollective.log'
   $mc_loglevel          = 'info'
-  $mc_daemonize         = '1'
+ 
+  # Default to daemonize, but on systems using upstart, dont daemonize
+  $mc_daemonize         = $operatingsystem ? {
+    /(?i-mx:ubuntu|debian)/ => $lsbdistrelease ? {
+									/(?i-mx:11\.04|10\.10|10\.04)/ => '1'
+									default => '0',
+							   }
+    default          => '1',
+  }
+ 
   $mc_security_provider = 'psk'
   $mc_security_psk      = 'changemeplease'
 
