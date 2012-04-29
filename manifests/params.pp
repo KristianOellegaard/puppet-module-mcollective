@@ -89,4 +89,6 @@ class mcollective::params {
   $pubkeypath = "/etc/mcollective/pubkeys/"
   
   $server_ssh_host_rsa_key = '/etc/ssh/ssh_host_rsa_key'
+  
+  $puppet_classes_file = '/var/lib/puppet/state/classes.txt'
 }

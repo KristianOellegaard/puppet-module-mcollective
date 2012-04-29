@@ -4,6 +4,7 @@ libdir      = <%= scope.lookupvar("mcollective::server::mc_libdir") %>
 logfile     = <%= scope.lookupvar("mcollective::server::mc_logfile") %>
 loglevel    = <%= scope.lookupvar("mcollective::server::mc_loglevel") %>
 daemonize   = <%= scope.lookupvar("mcollective::server::mc_daemonize") %>
+classesfile = <%= scope.lookupvar("mcollective::server::puppet_classes_file") %>
 
 # Plugins
 securityprovider = <%= scope.lookupvar("mcollective::server::mc_security_provider") %>

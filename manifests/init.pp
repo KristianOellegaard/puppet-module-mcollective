@@ -59,7 +59,8 @@ class mcollective(
   $fact_source                = $mcollective::params::fact_source,
   $yaml_facter_source         = '/etc/mcollective/facts.yaml',
   $stomp_user                 = $mcollective::params::stomp_user,
-  $stomp_passwd               = $mcollective::params::stomp_passwd
+  $stomp_passwd               = $mcollective::params::stomp_passwd,
+  $puppet_classes_file		  = $mcollective::params::puppet_classes_file
 
   ) inherits mcollective::params {
 
