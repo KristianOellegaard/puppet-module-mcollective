@@ -31,7 +31,7 @@ class mcollective::params {
 
   $mc_libdir = $operatingsystem ? {
     /(?i-mx:ubuntu|debian)/        => '/usr/share/mcollective/plugins',
-    /(?i-mx:centos|fedora|redhat)/ => '/usr/libexec/mcollective',
+    /(?i-mx:centos|fedora|redhat|FreeBSD)/ => '/usr/libexec/mcollective',
   }
 
   $mc_service_start = $operatingsystem ? {
