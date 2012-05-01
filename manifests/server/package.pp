@@ -22,6 +22,9 @@ class mcollective::server::package(
     redhat,centos,oel: {
       class { 'mcollective::server::package::redhat': }
     }
+	FreeBSD: {
+	  class { 'mcollective::server::package::freebsd': }
+	}
     default: {
       fail("operatingsystem not supported: ${operatingsystem}")
     }
