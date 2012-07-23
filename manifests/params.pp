@@ -34,16 +34,6 @@ class mcollective::params {
     /(?i-mx:centos|fedora|redhat|FreeBSD)/ => '/usr/libexec/mcollective',
   }
 
-  $mc_service_start = $operatingsystem ? {
-    /(?i-mx:ubuntu|debian)/        => '/etc/init.d/mcollective start',
-    /(?i-mx:centos|fedora|redhat)/ => '/sbin/service mcollective start',
-  }
-
-  $mc_service_stop = $operatingsystem ? {
-    /(?i-mx:ubuntu|debian)/        => '/etc/init.d/mcollective stop',
-    /(?i-mx:centos|fedora|redhat)/ => '/sbin/service mcollective stop',
-  }
-
   $plugin_base = "${mc_libdir}/mcollective"
 
   $plugin_subs = [
